@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>编辑座席</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <script src="/layui/layui.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <form class="layui-form" th:action="|/agent/${agent.work_id}|" method="POST">
+        <input type="hidden" name="_method" value="PUT" />
+        <input type="hidden" name="work_id" th:value="${agent.work_id}" />
+        <div style="width: 450px;margin: auto;">
+            <table border="1" align="center" class="layui-table">
+                <div class="layui-form-item">
+                    <tr>
+                        <td> <label class="layui-form-label">正在修改的座席工号为: </label></td>
+                        <td>
+                            <label class="layui-form-label">
+                                <p th:text="${agent.work_id}"></p>
+                            </label>
+                        </td>
+                    </tr>
+                </div>
+                <div class="layui-form-item">
+                    <tr>
+                        <td><label class="layui-form-label">修改名称: </label></td>
+                        <div class="layui-input-block">
+                            <td><input type="text" required lay-verify="required" autocomplete="off" name="name"
+                                    th:value="${agent.name}" class="layui-input" /></td>
+                        </div>
+                    </tr>
+                </div>
+                <tr>
+                    <td colspan="2" style="text-align: center;"><input
+                            class="layui-btn layui-anim layui-anim-scaleSpring" type="submit" /></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+
+</html>
