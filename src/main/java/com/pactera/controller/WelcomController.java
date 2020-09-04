@@ -21,7 +21,7 @@ public class WelcomController {
         return "welcome";
     }
 
-    // 默认跳转到/index路径
+    /* 默认跳转到/index路径 */
     @RequestMapping(value="/")
     public String default_url() {
         return "redirect:/index";
