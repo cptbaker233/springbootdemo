@@ -27,6 +27,7 @@ public class AgentController {
     /* post请求/agent/update, 跳转到更新席座页面 */
     @RequestMapping(value = "/agent/update", method = RequestMethod.POST)
     public String updateAgent(Agent agent, Model m) {
+        agent = agentService.selectAgent(agent);
         m.addAttribute("agent", agent);
         return "updateAgent";
     }

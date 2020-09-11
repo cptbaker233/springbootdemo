@@ -16,4 +16,6 @@ public interface AgentMapper {
     void deleteAgent(Agent agent);
 
     void insertAgent(Agent agent);
+
+    Agent selectAgent(Agent agent);
 }

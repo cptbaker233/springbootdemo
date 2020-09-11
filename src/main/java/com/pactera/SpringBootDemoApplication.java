@@ -3,11 +3,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.cache.annotation.EnableCaching;
 
 import java.util.ArrayList;
 
 
 @SpringBootApplication
+@EnableCaching
 public class SpringBootDemoApplication {
 
     private static Logger logger = LoggerFactory.getLogger(SpringBootDemoApplication.class);

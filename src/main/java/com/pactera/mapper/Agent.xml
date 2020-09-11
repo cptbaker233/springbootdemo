@@ -16,4 +16,7 @@
     <insert id="insertAgent">
         insert into agent values(#{work_id},#{name})
     </insert>
+    <select id="selectAgent" resultType="Agent">
+        select * from agent where work_id=#{work_id}
+    </select>
 </mapper>
